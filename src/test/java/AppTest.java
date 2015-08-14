@@ -8,4 +8,10 @@ public class AppTest {
     String result = "c-t";
     assertEquals(result, App.removeVowels("cat"));
   }
+
+  @Test
+  public void removeVowels_transformsSentences_thisIsASentence(){
+    String result = "Th-s -s - s-nt-nc-.";
+    assertEquals(result, App.removeVowels("This is a sentence."));
+  }
 }
