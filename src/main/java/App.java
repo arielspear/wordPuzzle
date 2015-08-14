@@ -1,10 +1,12 @@
-
+import java.io.Console;
 import java.util.HashMap;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
 public class App {
+
+  Console myConsole = System.console();
   public static void main(String[] args) {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
@@ -20,7 +22,9 @@ public class App {
   }
 
   public static String removeVowels(String input) {
-    String result = "dog";
+
+    String result = input.replaceAll("[aeiouAEIOU]", "-");
     return result;
+
   }
 }
